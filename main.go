@@ -11,8 +11,7 @@ import (
 )
 
 func main() {
-	// separate the code from the 'main' function so we can test it.
-	// all code that available in main function were not testable
+
 	Run()
 }
 
@@ -48,14 +47,6 @@ func Run() {
 	accRouter.DELETE("/:id", bukAPI.PerpustakaanDeleteHandler)
 	accRouter.GET("/:id", bukAPI.PerpustakaanGetHandler)
 	accRouter.GET("/", bukAPI.PerpustakaanGetsHandler)
-
-	// book app group api endpoint : http://domainname.com/v1/book
-	// accRouter = v1.Group("/book")
-	// accRouter.POST("/", accAPI.BookCreateHandler)
-	// accRouter.PUT("/:id", accAPI.BookUpdateHandler)
-	// accRouter.DELETE("/:id", accAPI.BookDeleteHandler)
-	// accRouter.GET("/:id", accAPI.BookGetHandler)
-	// accRouter.GET("/", accAPI.BookGetsHandler)
 
 	//run the server
 	log.Fatalf("%v", konek.Run())
